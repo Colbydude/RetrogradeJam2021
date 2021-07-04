@@ -21,8 +21,10 @@ module.exports = {
         camelcase: 'off',
         indent: ['error', 4],
         'import/extensions': 'off',
+        'import/no-cycle': 'off',
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
+        'linebreak-style': 'off',
         'lines-between-class-members': 'off',
         'max-len': ['error', {
             code: 140,

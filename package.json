@@ -8,7 +8,7 @@
         "server": "npm-run-all --parallel server:*",
         "server:build": "webpack --config server/webpack/webpack.server.js --watch",
         "server:start": "nodemon server/dist/server.js",
-        "shared.build": "rimraf shared/dist shared/tsconfig.tsbuildinfo && tsc -b shared"
+        "shared:build": "rimraf shared/dist shared/tsconfig.tsbuildinfo && tsc -b shared"
     },
     "dependencies": {
         "@geckos.io/phaser-on-nodejs": "^1.2.4",
