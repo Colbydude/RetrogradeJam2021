@@ -1,27 +1,24 @@
-import FpsText from '../objects/fpsText';
-import PhaserLogo from '../objects/phaserLogo';
+import { Socket } from 'socket.io-client';
+
+import Player from '../objects/player';
 
 export default class MainScene extends Phaser.Scene {
-    private fpsText: FpsText;
+    socket: Socket;
 
     constructor() {
         super({ key: 'MainScene' });
     }
 
-    create(): void {
-        new PhaserLogo(this, this.cameras.main.width / 2, 0);
-        this.fpsText = new FpsText(this);
+    init(props: { socket: Socket }): void {
+        const { socket } = props;
 
-        // Display the Phaser.VERSION.
-        this.add
-            .text(15, this.cameras.main.height - 15, `Phaser v${Phaser.VERSION}`, {
-                color: 'white',
-                fontSize: '24px',
-            })
-            .setOrigin(0, 1);
+        this.socket = socket;
+        this.listen();
     }
 
-    update(): void {
-        this.fpsText.update();
+    listen(): void {
+        this.socket.on('pos', (msg: {x: number, y: number}) => {
+            new Player(this, msg.x, msg.y);
+        });
     }
 }

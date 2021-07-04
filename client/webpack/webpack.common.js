@@ -3,7 +3,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-// const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: ['./client/src/scripts/game.ts'],
@@ -39,10 +38,6 @@ module.exports = {
                 { from: 'client/src/assets', to: 'assets' },
             ],
         }),
-        // new InjectManifest({
-        //     swSrc: path.resolve(__dirname, '../pwa/sw.js'),
-        //     swDest: 'sw.js',
-        // }),
     ],
     resolve: {
         alias: {

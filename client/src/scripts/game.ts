@@ -1,16 +1,10 @@
 import 'phaser';
 
-import { io } from 'socket.io-client';
-
-import { log } from '@shared/utils';
-
 import MainScene from './scenes/mainScene';
 import PreloadScene from './scenes/preloadScene';
 
-log('Booting game.');
-
-const SCREEN_WIDTH = 318;
-const SCREEN_HEIGHT = 500;
+const SCREEN_WIDTH = 160;
+const SCREEN_HEIGHT = 144;
 
 const config: Phaser.Types.Core.GameConfig = {
     audio: { noAudio: true },
@@ -19,7 +13,7 @@ const config: Phaser.Types.Core.GameConfig = {
     physics: {
         arcade: {
             debug: false,
-            gravity: { y: 50 },
+            gravity: { y: 0 },
         },
         default: 'arcade',
     },
@@ -36,12 +30,9 @@ const config: Phaser.Types.Core.GameConfig = {
         MainScene,
     ],
     type: Phaser.AUTO,
-    version: '2.0.0',
+    version: '0.0.1',
 };
 
 window.addEventListener('load', () => {
-    const socket = io('ws://localhost:3000', {
-        transports: ['websocket'],
-    });
     new Phaser.Game(config);
 });

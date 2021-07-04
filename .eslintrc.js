@@ -23,6 +23,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
+        'lines-between-class-members': 'off',
         'max-len': ['error', {
             code: 140,
             ignoreComments: true,

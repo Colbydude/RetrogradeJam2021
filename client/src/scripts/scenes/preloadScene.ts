@@ -1,3 +1,5 @@
+import io from 'socket.io-client';
+
 export default class PreloadScene extends Phaser.Scene {
     constructor() {
         super({ key: 'PreloadScene' });
@@ -8,6 +10,11 @@ export default class PreloadScene extends Phaser.Scene {
     }
 
     create(): void {
-        this.scene.start('MainScene');
+        // Setup the socket.
+        const socket = io('ws://localhost:3000', {
+            transports: ['websocket'],
+        });
+
+        this.scene.start('MainScene', { socket });
     }
 }
