@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <link rel="manifest" href="./manifest.json" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="<%= htmlWebpackPlugin.options.gameName %>" />
+    <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.gameName %>" />
+    <meta name="msapplication-starturl" content="./" />
+
+    <title><%= htmlWebpackPlugin.options.gameName %></title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: black;
+        }
+    </style>
+
+    <noscript>Please enable javascript to continue using this application.</noscript>
+
+    <!-- installs the serviceWorker -->
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+    </script> -->
+</head>
+<body>
+    <div id="phaser-game"></div>
+</body>
+</html>

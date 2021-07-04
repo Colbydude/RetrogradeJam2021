@@ -1,0 +1,10 @@
+.cache/
+.nyc_output/
+.webpack/
+.webpackCache/
+coverage/
+dist/
+node_modules/
+.DS_Store
+tsconfig.tsbuildinfo
+yarn-error.log
