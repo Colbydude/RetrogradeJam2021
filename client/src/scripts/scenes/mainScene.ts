@@ -24,6 +24,7 @@ export default class MainScene extends Phaser.Scene {
     listen(): void {
         this.socket.on('pos', (msg: {id: string, x: number, y: number}) => {
             console.log(`New Player: ${msg.id}`);
+
             this.sync.objects.push(new Player(this, msg.id, msg.x, msg.y));
         });
 

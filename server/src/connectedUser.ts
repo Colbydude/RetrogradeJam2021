@@ -25,8 +25,6 @@ export default class ConnectedUser {
             log(`Client ${this.id} disconnected`);
             this.worldManager.remove(this);
         });
-
-        this.socket.emit('pos', this.position);
     }
 
     disconnect(): void {
